@@ -1,0 +1,30 @@
+.main {
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.main-header {
+    background-color: blue;
+}
+
+.container {
+    // padding: 0 20px;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+.menu-content {
+    flex: 1;
+    background-color: red;
+    padding: 20px;
+}
+
+.sidebar {
+    width: 400px;
+    background-color: yellow;
+    padding: 20px;
+}

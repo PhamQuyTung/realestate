@@ -1,0 +1,49 @@
+:root {
+    --header-bg: #6c63ff;
+    --search-bg: #f4f4f4;
+    --sidebar-bg: #f9f9f9;
+    --content-bg: #fff;
+}
+
+.grid {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    grid-template-columns: 1fr;
+    height: 100vh;
+    gap: 20px;
+}
+
+.header {
+    background-color: var(--header-bg);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.searchTop {
+    background-color: var(--search-bg);
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.sidebar {
+    background-color: var(--sidebar-bg);
+    padding: 15px;
+    border-right: 1px solid #ddd;
+}
+
+.content {
+    background-color: var(--content-bg);
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

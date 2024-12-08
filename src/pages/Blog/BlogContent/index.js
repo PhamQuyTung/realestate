@@ -1,9 +1,9 @@
-function Property() {
+function BlogContent() {
     return (
         <div>
-            <h1>Welcome to the Property Page</h1>
+            <h1>BlogContent Page</h1>
         </div> // This is a functional component in React. It returns JSX, a JavaScript syntax extension used to create HTML in JavaScript.
     );
 }
 
-export default Property;
+export default BlogContent;

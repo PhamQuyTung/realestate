@@ -1,15 +1,15 @@
 import { DefaultLayout, Layout2, Layout21, Layout22 } from '~/components/Layout';
 import {
     Home,
-    Property,
+    PropertyContent,
     PropertyDetails,
-    Agent,
-    AgentDetails,
-    Agencies,
+    AgentContent,
     AgenciesDetails,
-    Carrer,
+    AgenciesContent,
+    AgentDetails,
     LoanProcess,
-    Blog,
+    Carrer,
+    BlogContent,
     BlogDetails,
     Contact,
     Dashboard,
@@ -23,8 +23,8 @@ const publicRoutes = [
     },
     {
         path: '/property',
-        component: Property,
-        layout: Layout2, // Layout có header, SearchTop và sidebar-left
+        component: PropertyContent,
+        layout: Layout21, // Layout có header, SearchTop và sidebar-left
     },
     {
         path: '/propertydetails',
@@ -33,7 +33,7 @@ const publicRoutes = [
     },
     {
         path: '/agent',
-        component: Agent,
+        component: AgentContent,
         layout: DefaultLayout, // Layout chỉ có header
     },
     {
@@ -43,7 +43,7 @@ const publicRoutes = [
     },
     {
         path: '/agencies',
-        component: Agencies,
+        component: AgenciesContent,
         layout: Layout22, // Layout có header và sidebar-right
     },
     {
@@ -63,7 +63,7 @@ const publicRoutes = [
     },
     {
         path: '/blog',
-        component: Blog,
+        component: BlogContent,
         layout: Layout22, // Layout có header và sidebar-right
     },
     {
