@@ -1,6 +1,11 @@
+import styles from './Sidebar.module.scss';
+import classNames from 'classnames/bind';
+
+const cx = classNames.bind(styles);
+
 function Sidebar() {
     return ( 
-        <div className="sidebar">
+        <div className={cx('sidebar-main')}>
             <h1>Sidebar</h1>
             <ul>
                 <li>Menu 1</li>

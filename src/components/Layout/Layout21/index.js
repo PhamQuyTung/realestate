@@ -9,17 +9,20 @@ const cx = classNames.bind(styles);
 function Layout21({ children }) {
     return (
         <div className={cx('main')}>
-            <div className={cx('main-header')}>
-                <Header />
-            </div>
+            <Header />
             <div className={cx('container')}>
                 <FlatTitle />
 
-                <div className={cx('main-content')}>
-                    <div className={cx('menu-content')}>{children}</div>
-
-                    <div className={cx('sidebar')}>
-                        <Sidebar />
+                <div className={cx('grid', 'wide')}>
+                    <div className={cx('row')}>
+                        <div className={cx('col', 'l-8', 'm-12', 'c-12')}>
+                            <div>{children}</div>
+                        </div>
+                        <div className={cx('col', 'l-4', 'm-0', 'c-0')}>
+                            <div>
+                                <Sidebar />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
