@@ -1,19 +1,28 @@
 import Header from '~/components/Header';
 import Sidebar from '~/components/Sidebar';
 // import SearchTop from '~/components/SearchTop';
+import FlatTitle from '~/components/FlatTitle';
+import styles from './Layout22.module.scss';
+import classNames from 'classnames/bind';
 
-function Layout21({ children }) {
+const cx = classNames.bind(styles);
+
+function Layout22({ children }) {
     return (
-        <div>
+        <div className={cx('main')}>
             <Header />
-            <div className="container">
-                <div className="main-content">
-                    <div className="content">
-                        {children}
-                    </div>
-
-                    <div className="sidebar-menu">
-                        <Sidebar />
+            <div className={cx('container')}>
+                <FlatTitle />
+                <div className={cx('grid', 'wide')}>
+                    <div className={cx('row')}>
+                        <div className={cx('col', 'l-8', 'm-12', 'c-12')}>
+                            <div>{children}</div>
+                        </div>
+                        <div className={cx('col', 'l-4', 'm-0', 'c-0')}>
+                            <div>
+                                <Sidebar />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -21,4 +30,4 @@ function Layout21({ children }) {
     );
 }
 
-export default Layout21;
+export default Layout22;

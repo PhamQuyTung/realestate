@@ -1,8 +1,13 @@
+import styles from './BlogContent.module.scss';
+import classNames from 'classnames/bind';
+
+const cx = classNames.bind(styles);
+
 function BlogContent() {
     return (
-        <div>
+        <div className={cx('blog-container')}>
             <h1>BlogContent Page</h1>
-        </div> // This is a functional component in React. It returns JSX, a JavaScript syntax extension used to create HTML in JavaScript.
+        </div> 
     );
 }
 
