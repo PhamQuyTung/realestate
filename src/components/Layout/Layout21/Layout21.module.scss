@@ -5,7 +5,7 @@
 }
 
 .grid.wide {
-    max-width: 1320px;
+    max-width: var(--layout-maxHeight);
     margin: 0 auto;
 }
 

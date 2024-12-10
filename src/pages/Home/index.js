@@ -1,7 +1,7 @@
 function Home() {
     return (
         <div>
-            <h1>Welcome to the Home Page</h1>
+            <h1 style={{color: 'white'}}>Welcome to the Home Page</h1>
         </div> 
     )
 }
