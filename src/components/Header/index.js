@@ -89,25 +89,27 @@ function Header() {
                                             delay={[0, 300]}
                                             placement="bottom-end"
                                             render={(attrs) => (
-                                                <div className={cx('box-menu-list')} tabIndex="-1" {...attrs}>
-                                                    <ul>
-                                                        <li>
-                                                            <Link to="/loanprocess">LoanProcess</Link>
-                                                        </li>
-                                                        <li>
-                                                            <Link to="/carrer">Carrer</Link>
-                                                        </li>
-                                                        <li>
-                                                            <Link to="/faq">Fqa</Link>
-                                                        </li>
-                                                        <li>
-                                                            <span>Englist</span>
-                                                        </li>
-                                                        <li>
-                                                            <span>Dark mode</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                                <ul className={cx('box-menu__list')} tabIndex="-1" {...attrs}>
+                                                    <li>
+                                                        <Link to="/loanprocess">LoanProcess</Link>
+                                                    </li>
+
+                                                    <li>
+                                                        <Link to="/carrer">Carrer</Link>
+                                                    </li>
+
+                                                    <li>
+                                                        <Link to="/faq">Fqa</Link>
+                                                    </li>
+
+                                                    <li>
+                                                        <span>Englist</span>
+                                                    </li>
+
+                                                    <li>
+                                                        <span>Dark mode</span>
+                                                    </li>
+                                                </ul>
                                             )}
                                         >
                                             <button className={cx('actions-item__addBtn')}>
