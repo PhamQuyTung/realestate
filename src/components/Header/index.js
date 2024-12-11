@@ -2,12 +2,19 @@ import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
-import { PhoneIcon } from '~/components/Icon';
-import Tippy from 'tippy.js';
-import 'tippy.js/dist/tippy.css'; // optional for styling
+import { faAngleDown, faEllipsis, faEllipsisVertical, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { ElipsIcon } from '~/components/Icon';
+import Tippy from '@tippyjs/react/headless'; // different import path!
+// import 'tippy.js/dist/tippy.css'; // optional for styling
 
 const cx = classNames.bind(styles);
+
+// const Menu_list = [
+//     {
+//         title: 'Loan Process',
+//         to: '/loan',
+//     }
+// ]
 
 function Header() {
     return (
@@ -26,28 +33,39 @@ function Header() {
                             <div className={cx('menu')}>
                                 <ul className={cx('list')}>
                                     <li>
-                                        <Link to="/" className={cx('menu-item')} href="#">
+                                        <Link to="/" className={cx('menu-item')}>
                                             <span>Home</span>
                                         </Link>
                                     </li>
+
                                     <li>
-                                        <Link to="/Property" className={cx('menu-item')} href="#">
+                                        <Link to="/property" className={cx('menu-item')}>
                                             <span>Property</span>
                                         </Link>
                                     </li>
+
                                     <li>
-                                        <span className={cx('menu-item')}>
-                                            More
-                                            <FontAwesomeIcon className={cx('icon')} icon={faAngleDown} />
-                                        </span>
+                                        <Link to="/agencies" className={cx('menu-item')}>
+                                            Agencies
+                                            {/* <FontAwesomeIcon className={cx('icon-down')} icon={faAngleDown} /> */}
+                                        </Link>
                                     </li>
+
                                     <li>
-                                        <Link to="/Blog" className={cx('menu-item')} href="#">
+                                        <Link to="/agent" className={cx('menu-item')}>
+                                            Agents
+                                            {/* <FontAwesomeIcon className={cx('icon-down')} icon={faAngleDown} /> */}
+                                        </Link>
+                                    </li>
+
+                                    <li>
+                                        <Link to="/blog" className={cx('menu-item')}>
                                             <span>Blog</span>
                                         </Link>
                                     </li>
+
                                     <li>
-                                        <Link to="/Contact" className={cx('menu-item')} href="#">
+                                        <Link to="/contact" className={cx('menu-item')}>
                                             <span>Contact</span>
                                         </Link>
                                     </li>
@@ -58,15 +76,48 @@ function Header() {
                             <div>
                                 <ul className={cx('actions')}>
                                     <li className={cx('actions-item')}>
-                                        <PhoneIcon className={cx('icon')} />
+                                        <FontAwesomeIcon icon={faPhone} className={cx('icon-phone')} />
                                         <span className={cx('actions-item_phone')}>(603) 555-0123</span>
                                     </li>
                                     <li className={cx('actions-item')}>
-                                        <span className={cx('actions-item')}>login</span>
+                                        <button className={cx('actions-item__loginBtn')}>Login</button>
                                     </li>
-                                    {/* <li className={cx('actions-item')}>
-                                        <span className={cx('actions-item')}>action3</span>
-                                    </li> */}
+                                    <li className={cx('actions-item')}>
+                                        <Tippy
+                                            // visible
+                                            interactive
+                                            delay={[0, 300]}
+                                            placement="bottom-end"
+                                            render={(attrs) => (
+                                                <div className={cx('box-menu-list')} tabIndex="-1" {...attrs}>
+                                                    <ul>
+                                                        <li>
+                                                            <Link to="/loanprocess">LoanProcess</Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link to="/carrer">Carrer</Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link to="/faq">Fqa</Link>
+                                                        </li>
+                                                        <li>
+                                                            <span>Englist</span>
+                                                        </li>
+                                                        <li>
+                                                            <span>Dark mode</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            )}
+                                        >
+                                            <button className={cx('actions-item__addBtn')}>
+                                                <FontAwesomeIcon
+                                                    icon={faEllipsisVertical}
+                                                    className={cx('icon-ellips')}
+                                                />
+                                            </button>
+                                        </Tippy>
+                                    </li>
                                 </ul>
                             </div>
                         </div>

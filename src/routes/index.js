@@ -7,12 +7,13 @@ import {
     AgenciesDetails,
     AgenciesContent,
     AgentDetails,
-    LoanProcess,
-    Carrer,
     BlogContent,
     BlogDetails,
     Contact,
-    Dashboard,
+    LoanProcess,
+    Carrer,
+    Faq,
+    Dashboard
 } from '~/pages';
 
 const publicRoutes = [
@@ -52,16 +53,6 @@ const publicRoutes = [
         layout: Layout22, // Layout có header và sidebar-right
     },
     {
-        path: '/loanprocess',
-        component: LoanProcess,
-        layout: DefaultLayout, // Layout chỉ có header
-    },
-    {
-        path: '/career',
-        component: Carrer,
-        layout: DefaultLayout, // Layout chỉ có header
-    },
-    {
         path: '/blog',
         component: BlogContent,
         layout: Layout22, // Layout có header và sidebar-right
@@ -74,6 +65,21 @@ const publicRoutes = [
     {
         path: '/contact',
         component: Contact,
+        layout: DefaultLayout, // Layout chỉ có header
+    },
+    {
+        path: '/loanprocess',
+        component: LoanProcess,
+        layout: DefaultLayout, // Layout chỉ có header
+    },
+    {
+        path: '/carrer',
+        component: Carrer,
+        layout: DefaultLayout, // Layout chỉ có header
+    },
+    {
+        path: '/faq',
+        component: Faq,
         layout: DefaultLayout, // Layout chỉ có header
     },
     // {

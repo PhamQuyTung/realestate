@@ -11,6 +11,7 @@ import BlogContent from './Blog/BlogContent';
 import BlogDetails from './Blog/BlogDetails';
 import Contact from './Contact';
 import Dashboard from './Dashboard';
+import Faq from './Faq';
 
 export {
     Home,
@@ -26,4 +27,5 @@ export {
     BlogDetails,
     Contact,
     Dashboard,
+    Faq
 };

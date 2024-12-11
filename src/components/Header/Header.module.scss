@@ -635,13 +635,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
 }
 
 .menu-item {
     font-size: 1.6rem;
     color: var(--black-color);
-    margin: 0 10px;
+    margin: 0 3px;
     cursor: pointer;
     transition: color 0.3s ease;
     // text-decoration: none;
@@ -656,7 +655,7 @@
         color: var(--primary-color1);
     }
 
-    .icon {
+    .icon-down {
         font-size: 1.4rem;
         margin-left: 10px;
     }
@@ -686,10 +685,52 @@
 
 .actions-item_phone {
     font-weight: 700;
+    margin-right: 10px;
 }
 
-.icon {
-    // color: var(--primary-color1);
-    font-size: 1.4rem;
-    margin-right: 10px;
+.icon-phone {
+    color: var(--primary-color1);
+    font-size: 1.6rem;
+    margin: 0 10px;
+    background-color: transparent;
+}
+
+.icon-ellips {
+    color: var(--black-color);
+
+    &:hover {
+        color: var(--primary-color1);
+    }
+}
+
+.actions-item__loginBtn {
+    font-size: 1.6rem;
+    font-weight: 600;
+    background-color: transparent;
+    color: var(--primary-color1);
+    border: 1px solid var(--primary-color1);
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: var(--primary-color1);
+        color: var(--white-color);
+    }
+}
+
+.actions-item__addBtn {
+    margin-left: 5px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    
+    &:hover {
+        color: var(--primary-color1);
+    }
+}
+
+.icon-ellips {
+    color: var(--black-color);
+    font-size: 1.8rem;
 }
