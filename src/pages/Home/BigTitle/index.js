@@ -22,24 +22,22 @@ function BigTitle() {
                                 {/* form-title */}
                                 <div className={cx('form-title')}>
                                     <div className={cx('drop-sort')}>
-                                        <select>
+                                        <select className={cx('select-field')}>
                                             <option value="">Featured</option>
                                             <option value="">Price: Low to High</option>
                                             <option value="">Price: High to Low</option>
                                         </select>
                                     </div>
 
-                                    <form>
-                                        <fieldset>
-                                            <input type="text" placeholder="Place, neighborhood, school or agent..." />
-                                        </fieldset>
+                                    <form className={cx('form-field')}>
+                                        <input type="text" placeholder="Place, neighborhood, school or agent..." />
                                     </form>
 
-                                    <div className={cx('form-title')}>
+                                    <div className={cx('box-itemBtn')}>
                                         <button className={cx('filter-btn')}>
                                             <FontAwesomeIcon icon={faSliders} className={cx('icon-sliders')} />
                                         </button>
-                                        <a href="#">
+                                        <a href="#" className={cx('search-link')}>
                                             Search
                                             <FontAwesomeIcon icon={faSearch} className={cx('icon-search')} />
                                         </a>
