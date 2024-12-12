@@ -1,10 +1,10 @@
 export const ElipsIcon = ({ width = '2rem', height = '2rem', className }) => (
     <svg
-    className={className}
-    width={width}
-    height={height}
-    viewBox="0 0 20 20"
-    fill="currentColor"
+        className={className}
+        width={width}
+        height={height}
+        viewBox="0 0 20 20"
+        fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
     >
         <path

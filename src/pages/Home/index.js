@@ -1,7 +1,17 @@
+import styles from './Home.module.scss';
+import classNames from 'classnames/bind';
+import BigTitle from './BigTitle'
+
+const cx = classNames.bind(styles);
+
 function Home() {
     return (
-        <div>
-            <h1 style={{color: 'white'}}>Welcome to the Home Page</h1>
+        <div className={cx('home-container')}>
+            {/* Big title home page */}
+            <BigTitle />
+
+            {/* main content home */}
+            {/* footer home */}
         </div> 
     )
 }
