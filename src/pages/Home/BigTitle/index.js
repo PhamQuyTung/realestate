@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './BigTitle.module.scss';
 import classNames from 'classnames/bind';
 
+import SearchForm from '~/components/SearchForm';
+
 const cx = classNames.bind(styles);
 
 function BigTitle() {
@@ -86,7 +88,7 @@ function BigTitle() {
                                 </div>
 
                                 {/* search-form */}
-                                <div className={cx('search-form')}></div>
+                                <SearchForm />
                             </div>
                         </div>
                     </div>
