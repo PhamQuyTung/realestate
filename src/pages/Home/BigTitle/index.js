@@ -1,11 +1,16 @@
+// import thư viện react, useState để quản lý state, Tippy để hiển thị tooltip
 import React, { useState } from 'react';
+import Tippy from '@tippyjs/react/headless'; // different import path!
 
+// import các ảnh icon từ fontawesome
 import { faAngleUp, faAngleDown, faSliders, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+// import các css cho trang BigTitle
 import styles from './BigTitle.module.scss';
 import classNames from 'classnames/bind';
 
+// import component search
 import SearchForm from '~/components/SearchForm';
 
 const cx = classNames.bind(styles);
@@ -75,9 +80,25 @@ function BigTitle() {
                                     </form>
 
                                     <div className={cx('box-itemBtn')}>
-                                        <button className={cx('filter-btn')}>
-                                            <FontAwesomeIcon icon={faSliders} className={cx('icon-sliders')} />
-                                        </button>
+                                        <Tippy
+                                            // visible
+                                            interactive
+                                            delay={[0, 300]}
+                                            placement="bottom-end"
+                                            // sticky={true}
+                                            offset={[0, 17]}
+                                            trigger="click"
+                                            render={(attrs) => (
+                                                <div className="box" tabIndex="-1" {...attrs}>
+                                                    {/* search-form */}
+                                                    <SearchForm />
+                                                </div>
+                                            )}
+                                        >
+                                            <button className={cx('filter-btn')}>
+                                                <FontAwesomeIcon icon={faSliders} className={cx('icon-sliders')} />
+                                            </button>
+                                        </Tippy>
 
                                         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                                         <a href="#" className={cx('search-link')}>
@@ -86,9 +107,6 @@ function BigTitle() {
                                         </a>
                                     </div>
                                 </div>
-
-                                {/* search-form */}
-                                <SearchForm />
                             </div>
                         </div>
                     </div>

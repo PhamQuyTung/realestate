@@ -9,13 +9,6 @@ import Tippy from '@tippyjs/react/headless'; // different import path!
 
 const cx = classNames.bind(styles);
 
-// const Menu_list = [
-//     {
-//         title: 'Loan Process',
-//         to: '/loan',
-//     }
-// ]
-
 function Header() {
     return (
         <div className={cx('header-top')}>
