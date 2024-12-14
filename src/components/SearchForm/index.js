@@ -3,9 +3,7 @@ import styles from './SearchForm.module.scss';
 import classNames from 'classnames/bind';
 import { useState } from 'react';
 
-// import các ảnh icon từ fontawesome
-import { faAngleUp, faAngleDown, faSliders, faSearch } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import DropSort from '~/components/DropSort';
 
 const cx = classNames.bind(styles);
 function SearchForm() {
@@ -22,15 +20,17 @@ function SearchForm() {
         'North Carolina',
     ];
 
+    const SelectOptionBox2 = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+
+    const SelectOptionBox3 = ['1', '2', '3', '4'];
+
+    const SelectOptionBox4 = ['1', '2', '3', '4', '5', '6'];
+
     // ----------------------------------------------------------------
     // Logic xử lý input number
     const [bedroom, setBedroom] = useState(0);
     const [price, setPrice] = useState([100, 500000]);
     const [size, setSize] = useState([0, 1000]);
-
-    //Logic xử lý dropdown
-    const [isOpen, setIsOpen] = useState(false); //set isOpen flag to true when opening the dialog box
-    const [selectedOption, setSelectedOption] = useState('Select Option'); //set selectedOption flag to true when selecting option from the dialog box
 
     // ----------------------------------------------------------------
     // Logic xử lý input text
@@ -57,15 +57,21 @@ function SearchForm() {
         setSize(newSize);
     };
 
-    // Logic xử lý click vào dropdown
-    const toggleDropdown = () => {
-        setIsOpen(!isOpen);
+    //
+    const handleSelectOption1 = (selected) => {
+        console.log('Selected from Box 1:', selected);
     };
 
-    // Logic xử lý click vào option dropdown
-    const handleOptionClick = (option) => {
-        setSelectedOption(option); // Cập nhật chữ hiển thị
-        setIsOpen(false); // Đóng dropdown sau khi chọn
+    const handleSelectOption2 = (selected) => {
+        console.log('Selected from Box 2:', selected);
+    };
+
+    const handleSelectOption3 = (selected) => {
+        console.log('Selected from Box 3:', selected);
+    };
+
+    const handleSelectOption4 = (selected) => {
+        console.log('Selected from Box 4:', selected);
     };
 
     // ----------------------------------------------------------------
@@ -119,116 +125,32 @@ function SearchForm() {
 
             <div className={cx('filter-section')}>
                 {/* drop-sort Province/State */}
-                <div className={cx('drop-sort')}>
-                    <div className={cx('dropdown-header')} onClick={toggleDropdown}>
-                        <span>{selectedOption}</span>
-                        <FontAwesomeIcon
-                            icon={isOpen ? faAngleUp : faAngleDown} // icon size change to fit
-                            className={cx('dropdown-icon')}
-                        />
-                    </div>
-
-                    {/* Logic dropdown  */}
-                    {isOpen && (
-                        <ul className={cx('dropdown-list')}>
-                            {SelectOptionBox1.map((option) => (
-                                <li
-                                    key={option}
-                                    className={cx('dropdown-item', {
-                                        'dropdown-item-selected': selectedOption === option, // Highlight khi được chọn
-                                    })}
-                                    onClick={() => handleOptionClick(option)}
-                                >
-                                    {option}
-                                </li>
-                            ))}
-                        </ul>
-                    )}
-                </div>
+                <DropSort
+                    options={SelectOptionBox1}
+                    initialValue="Provinces / States" // Giá trị khởi tạo cho Box 1
+                    onOptionSelect={handleSelectOption1}
+                />
 
                 {/* drop-sort Rooms */}
-                <div className={cx('drop-sort')}>
-                    <div className={cx('dropdown-header')} onClick={toggleDropdown}>
-                        <span>{selectedOption}</span>
-                        <FontAwesomeIcon
-                            icon={isOpen ? faAngleUp : faAngleDown} // icon size change to fit
-                            className={cx('dropdown-icon')}
-                        />
-                    </div>
-
-                    {/* Logic dropdown  */}
-                    {isOpen && (
-                        <ul className={cx('dropdown-list')}>
-                            {arrSelectOption.map((option) => (
-                                <li
-                                    key={option}
-                                    className={cx('dropdown-item', {
-                                        'dropdown-item-selected': selectedOption === option, // Highlight khi được chọn
-                                    })}
-                                    onClick={() => handleOptionClick(option)}
-                                >
-                                    {option}
-                                </li>
-                            ))}
-                        </ul>
-                    )}
-                </div>
+                <DropSort
+                    options={SelectOptionBox2}
+                    initialValue="Rooms" // Giá trị khởi tạo cho Box 2
+                    onOptionSelect={handleSelectOption2}
+                />
 
                 {/* drop-sort Bath */}
-                <div className={cx('drop-sort')}>
-                    <div className={cx('dropdown-header')} onClick={toggleDropdown}>
-                        <span>{selectedOption}</span>
-                        <FontAwesomeIcon
-                            icon={isOpen ? faAngleUp : faAngleDown} // icon size change to fit
-                            className={cx('dropdown-icon')}
-                        />
-                    </div>
-
-                    {/* Logic dropdown  */}
-                    {isOpen && (
-                        <ul className={cx('dropdown-list')}>
-                            {arrSelectOption.map((option) => (
-                                <li
-                                    key={option}
-                                    className={cx('dropdown-item', {
-                                        'dropdown-item-selected': selectedOption === option, // Highlight khi được chọn
-                                    })}
-                                    onClick={() => handleOptionClick(option)}
-                                >
-                                    {option}
-                                </li>
-                            ))}
-                        </ul>
-                    )}
-                </div>
+                <DropSort
+                    options={SelectOptionBox3}
+                    initialValue="Bath: Any" // Giá trị khởi tạo cho Box 3
+                    onOptionSelect={handleSelectOption3}
+                />
 
                 {/* drop-sort Beds */}
-                <div className={cx('drop-sort')}>
-                    <div className={cx('dropdown-header')} onClick={toggleDropdown}>
-                        <span>{selectedOption}</span>
-                        <FontAwesomeIcon
-                            icon={isOpen ? faAngleUp : faAngleDown} // icon size change to fit
-                            className={cx('dropdown-icon')}
-                        />
-                    </div>
-
-                    {/* Logic dropdown  */}
-                    {isOpen && (
-                        <ul className={cx('dropdown-list')}>
-                            {arrSelectOption.map((option) => (
-                                <li
-                                    key={option}
-                                    className={cx('dropdown-item', {
-                                        'dropdown-item-selected': selectedOption === option, // Highlight khi được chọn
-                                    })}
-                                    onClick={() => handleOptionClick(option)}
-                                >
-                                    {option}
-                                </li>
-                            ))}
-                        </ul>
-                    )}
-                </div>
+                <DropSort
+                    options={SelectOptionBox4}
+                    initialValue="Beds: Any" // Giá trị khởi tạo cho Box 4
+                    onOptionSelect={handleSelectOption4}
+                />
             </div>
 
             <div className={cx('amenities-section')}>
