@@ -3,11 +3,37 @@ import styles from './SearchForm.module.scss';
 import classNames from 'classnames/bind';
 import { useState } from 'react';
 
+// import các ảnh icon từ fontawesome
+import { faAngleUp, faAngleDown, faSliders, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 const cx = classNames.bind(styles);
 function SearchForm() {
+    const SelectOptionBox1 = [
+        'California',
+        'Texas',
+        'Florida',
+        'New York',
+        'Illinois',
+        'Washington',
+        'Pennsylvania',
+        'Ohio',
+        'Georgia',
+        'North Carolina',
+    ];
+
+    // ----------------------------------------------------------------
+    // Logic xử lý input number
+    const [bedroom, setBedroom] = useState(0);
     const [price, setPrice] = useState([100, 500000]);
     const [size, setSize] = useState([0, 1000]);
 
+    //Logic xử lý dropdown
+    const [isOpen, setIsOpen] = useState(false); //set isOpen flag to true when opening the dialog box
+    const [selectedOption, setSelectedOption] = useState('Select Option'); //set selectedOption flag to true when selecting option from the dialog box
+
+    // ----------------------------------------------------------------
+    // Logic xử lý input text
     const handlePriceChange = (e, index) => {
         const newPrice = [...price];
         newPrice[index] = Number(e.target.value);
@@ -19,6 +45,7 @@ function SearchForm() {
         setPrice(newPrice);
     };
 
+    // Logic xử lý input text
     const handleSizeChange = (e, index) => {
         const newSize = [...size];
         newSize[index] = Number(e.target.value);
@@ -30,6 +57,19 @@ function SearchForm() {
         setSize(newSize);
     };
 
+    // Logic xử lý click vào dropdown
+    const toggleDropdown = () => {
+        setIsOpen(!isOpen);
+    };
+
+    // Logic xử lý click vào option dropdown
+    const handleOptionClick = (option) => {
+        setSelectedOption(option); // Cập nhật chữ hiển thị
+        setIsOpen(false); // Đóng dropdown sau khi chọn
+    };
+
+    // ----------------------------------------------------------------
+    // render jsx
     return (
         <div className={cx('widget-price')}>
             <div className={cx('range-section')}>
@@ -78,19 +118,117 @@ function SearchForm() {
             </div>
 
             <div className={cx('filter-section')}>
-                <select className={cx('dropdown')}>
-                    <option>Province / States</option>
-                    {/* Add options dynamically */}
-                </select>
-                <select className={cx('dropdown')}>
-                    <option>Rooms</option>
-                </select>
-                <select className={cx('dropdown')}>
-                    <option>Bath: Any</option>
-                </select>
-                <select className={cx('dropdown')}>
-                    <option>Beds: Any</option>
-                </select>
+                {/* drop-sort Province/State */}
+                <div className={cx('drop-sort')}>
+                    <div className={cx('dropdown-header')} onClick={toggleDropdown}>
+                        <span>{selectedOption}</span>
+                        <FontAwesomeIcon
+                            icon={isOpen ? faAngleUp : faAngleDown} // icon size change to fit
+                            className={cx('dropdown-icon')}
+                        />
+                    </div>
+
+                    {/* Logic dropdown  */}
+                    {isOpen && (
+                        <ul className={cx('dropdown-list')}>
+                            {SelectOptionBox1.map((option) => (
+                                <li
+                                    key={option}
+                                    className={cx('dropdown-item', {
+                                        'dropdown-item-selected': selectedOption === option, // Highlight khi được chọn
+                                    })}
+                                    onClick={() => handleOptionClick(option)}
+                                >
+                                    {option}
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+                </div>
+
+                {/* drop-sort Rooms */}
+                <div className={cx('drop-sort')}>
+                    <div className={cx('dropdown-header')} onClick={toggleDropdown}>
+                        <span>{selectedOption}</span>
+                        <FontAwesomeIcon
+                            icon={isOpen ? faAngleUp : faAngleDown} // icon size change to fit
+                            className={cx('dropdown-icon')}
+                        />
+                    </div>
+
+                    {/* Logic dropdown  */}
+                    {isOpen && (
+                        <ul className={cx('dropdown-list')}>
+                            {arrSelectOption.map((option) => (
+                                <li
+                                    key={option}
+                                    className={cx('dropdown-item', {
+                                        'dropdown-item-selected': selectedOption === option, // Highlight khi được chọn
+                                    })}
+                                    onClick={() => handleOptionClick(option)}
+                                >
+                                    {option}
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+                </div>
+
+                {/* drop-sort Bath */}
+                <div className={cx('drop-sort')}>
+                    <div className={cx('dropdown-header')} onClick={toggleDropdown}>
+                        <span>{selectedOption}</span>
+                        <FontAwesomeIcon
+                            icon={isOpen ? faAngleUp : faAngleDown} // icon size change to fit
+                            className={cx('dropdown-icon')}
+                        />
+                    </div>
+
+                    {/* Logic dropdown  */}
+                    {isOpen && (
+                        <ul className={cx('dropdown-list')}>
+                            {arrSelectOption.map((option) => (
+                                <li
+                                    key={option}
+                                    className={cx('dropdown-item', {
+                                        'dropdown-item-selected': selectedOption === option, // Highlight khi được chọn
+                                    })}
+                                    onClick={() => handleOptionClick(option)}
+                                >
+                                    {option}
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+                </div>
+
+                {/* drop-sort Beds */}
+                <div className={cx('drop-sort')}>
+                    <div className={cx('dropdown-header')} onClick={toggleDropdown}>
+                        <span>{selectedOption}</span>
+                        <FontAwesomeIcon
+                            icon={isOpen ? faAngleUp : faAngleDown} // icon size change to fit
+                            className={cx('dropdown-icon')}
+                        />
+                    </div>
+
+                    {/* Logic dropdown  */}
+                    {isOpen && (
+                        <ul className={cx('dropdown-list')}>
+                            {arrSelectOption.map((option) => (
+                                <li
+                                    key={option}
+                                    className={cx('dropdown-item', {
+                                        'dropdown-item-selected': selectedOption === option, // Highlight khi được chọn
+                                    })}
+                                    onClick={() => handleOptionClick(option)}
+                                >
+                                    {option}
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+                </div>
             </div>
 
             <div className={cx('amenities-section')}>
