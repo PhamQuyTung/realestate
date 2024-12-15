@@ -1,11 +1,23 @@
-.drop-sort {
+//
+.wide {
+    min-width: 300px;
+    max-height: 155px;
+}
+
+.narrow {
     min-width: 200px;
+    height: 84px;
+}
+
+//
+.drop-sort {
+    // min-width: 200px;
     position: relative;
     color: var(--primary-color2);
 }
 
 .dropdown-header {
-    width: 290px;
+    // width: 290px;
     height: 54px;
     display: flex;
     justify-content: space-between;
@@ -32,7 +44,7 @@
     top: 100%;
     left: 0;
     width: 100%;
-    height: 155px;
+    // height: 155px;
     border-radius: 5px;
     border: 1px solid #ececec;
     background-color: #fff;
@@ -57,6 +69,6 @@
 }
 
 .dropdown-item-selected {
-    color: var(--primary-color1);  // hightlight màu chữ khi đc chọn
+    color: var(--primary-color1); // hightlight màu chữ khi đc chọn
     border-radius: 5px;
 }

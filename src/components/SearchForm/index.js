@@ -74,6 +74,9 @@ function SearchForm() {
         console.log('Selected from Box 4:', selected);
     };
 
+    //
+    
+
     // ----------------------------------------------------------------
     // render jsx
     return (
@@ -129,6 +132,7 @@ function SearchForm() {
                     options={SelectOptionBox1}
                     initialValue="Provinces / States" // Giá trị khởi tạo cho Box 1
                     onOptionSelect={handleSelectOption1}
+                    isWide={true}
                 />
 
                 {/* drop-sort Rooms */}
@@ -136,6 +140,7 @@ function SearchForm() {
                     options={SelectOptionBox2}
                     initialValue="Rooms" // Giá trị khởi tạo cho Box 2
                     onOptionSelect={handleSelectOption2}
+                    isWide={true}
                 />
 
                 {/* drop-sort Bath */}
@@ -143,6 +148,7 @@ function SearchForm() {
                     options={SelectOptionBox3}
                     initialValue="Bath: Any" // Giá trị khởi tạo cho Box 3
                     onOptionSelect={handleSelectOption3}
+                    isWide={true}
                 />
 
                 {/* drop-sort Beds */}
@@ -150,6 +156,7 @@ function SearchForm() {
                     options={SelectOptionBox4}
                     initialValue="Beds: Any" // Giá trị khởi tạo cho Box 4
                     onOptionSelect={handleSelectOption4}
+                    isWide={true}
                 />
             </div>
 

@@ -6,40 +6,31 @@ import styles from './DropSort.module.scss';
 
 const cx = classNames.bind(styles);
 
-const DropSort = ({ options, onOptionSelect, initialValue }) => {
+const DropSort = ({ options, onOptionSelect, initialValue, isWide }) => {
     // Sử dụng initialValue làm giá trị khởi tạo cho selectedOption
     const [selectedOption, setSelectedOption] = useState(initialValue || '');
 
     const [isOpen, setIsOpen] = useState(false);
 
+    // Logic xử lý click vào dropdown
     const toggleDropdown = () => setIsOpen(!isOpen);
 
+    // Logic xử lý click vào option dropdown
     const handleOptionClick = (option) => {
-        setSelectedOption(option);
-        setIsOpen(false);
+        setSelectedOption(option); // Cập nhật chữ hiển thị
+        setIsOpen(false); // Đóng dropdown sau khi chọn
         if (onOptionSelect) onOptionSelect(option); // Gọi callback khi chọn option
-    };
-
-    const handleSelectOption1 = (selected) => {
-        console.log('Selected from Box 1:', selected);
-    };
-
-    const handleSelectOption2 = (selected) => {
-        console.log('Selected from Box 2:', selected);
     };
 
     return (
         <div className={cx('drop-sort')}>
-            <div className={cx('dropdown-header')} onClick={toggleDropdown}>
+            <div className={cx('dropdown-header', { wide: isWide, narrow: !isWide })} onClick={toggleDropdown}>
                 <span>{selectedOption}</span>
-                <FontAwesomeIcon
-                    icon={isOpen ? faAngleUp : faAngleDown}
-                    className={cx('dropdown-icon')}
-                />
+                <FontAwesomeIcon icon={isOpen ? faAngleUp : faAngleDown} className={cx('dropdown-icon')} />
             </div>
 
             {isOpen && (
-                <ul className={cx('dropdown-list')}>
+                <ul className={cx('dropdown-list', { wide: isWide, narrow: !isWide })}>
                     {options.map((option) => (
                         <li
                             key={option}
