@@ -4,8 +4,10 @@ import classNames from 'classnames/bind';
 import { useState } from 'react';
 
 import DropSort from '~/components/DropSort';
+import SliderRange from '~/components/SliderRange';
 
 const cx = classNames.bind(styles);
+
 function SearchForm() {
     const SelectOptionBox1 = [
         'California',
@@ -75,55 +77,14 @@ function SearchForm() {
     };
 
     //
-    
 
     // ----------------------------------------------------------------
     // render jsx
     return (
         <div className={cx('widget-price')}>
             <div className={cx('range-section')}>
-                <div className={cx('slider')}>
-                    <label>
-                        Price range from <span>${price[0]}</span> to <span>${price[1]}</span>
-                    </label>
-                    <input
-                        type="range"
-                        min="100"
-                        max="500000"
-                        step="100"
-                        value={price[0]}
-                        onChange={(e) => handlePriceChange(e, 0)}
-                    />
-                    <input
-                        type="range"
-                        min="100"
-                        max="500000"
-                        step="100"
-                        value={price[1]}
-                        onChange={(e) => handlePriceChange(e, 1)}
-                    />
-                </div>
-                <div className={cx('slider')}>
-                    <label>
-                        Size range from <span>{size[0]}</span> to <span>{size[1]}</span>
-                    </label>
-                    <input
-                        type="range"
-                        min="0"
-                        max="1000"
-                        step="10"
-                        value={size[0]}
-                        onChange={(e) => handleSizeChange(e, 0)}
-                    />
-                    <input
-                        type="range"
-                        min="0"
-                        max="1000"
-                        step="10"
-                        value={size[1]}
-                        onChange={(e) => handleSizeChange(e, 1)}
-                    />
-                </div>
+                <SliderRange title='Price' />
+                <SliderRange title='Size' />
             </div>
 
             <div className={cx('filter-section')}>
