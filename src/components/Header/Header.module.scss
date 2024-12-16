@@ -591,6 +591,10 @@
     }
 }
 
+.menu-item.active {
+    color: var(--primary-color1);
+}
+
 //
 .header-top {
     position: fixed;
@@ -713,6 +717,10 @@
         color: var(--white-color);
         background-color: var(--primary-color1);
     }
+}
+
+.box-menu__item-title {
+    margin-left: 10px;
 }
 
 .actions-item_phone {

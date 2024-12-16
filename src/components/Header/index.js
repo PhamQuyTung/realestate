@@ -1,6 +1,7 @@
+import React, { useState } from 'react';
 import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faEllipsis, faEllipsisVertical, faPhone } from '@fortawesome/free-solid-svg-icons';
 import {
@@ -20,6 +21,36 @@ import Tippy from '@tippyjs/react/headless'; // different import path!
 const cx = classNames.bind(styles);
 
 function Header() {
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    // menu header navigation
+    const headerMenuItems = [
+        {
+            title: 'Home',
+            to: '/',
+        },
+        {
+            title: 'Property',
+            to: '/property',
+        },
+        {
+            title: 'Agencies',
+            to: '/agencies',
+        },
+        {
+            title: 'Agents',
+            to: '/agents',
+        },
+        {
+            title: 'Blog',
+            to: '/blog',
+        },
+        {
+            title: 'Contact',
+            to: '/contact',
+        },
+    ];
+
     // menu items user
     const userMenuItems = [
         {
@@ -69,6 +100,30 @@ function Header() {
         },
     ];
 
+    // menu actions more
+    const moreMenuItems = [
+        {
+            title: 'LoanProcess',
+            to: '/loanprocess',
+        },
+        {
+            title: 'Carrers',
+            to: '/carrer',
+        },
+        {
+            title: 'Fqa',
+            to: '/fqa',
+        },
+        {
+            title: 'English',
+            //Handle Logic
+        },
+        {
+            title: 'Dark mode',
+            //Handle Logic
+        },
+    ];
+
     //
     const currentUser = true;
 
@@ -88,43 +143,24 @@ function Header() {
                             {/* MENU */}
                             <div className={cx('menu')}>
                                 <ul className={cx('list')}>
-                                    <li>
-                                        <Link to="/" className={cx('menu-item')}>
-                                            <span>Home</span>
-                                        </Link>
-                                    </li>
+                                    {headerMenuItems.map((item, index) => {
+                                        return (
+                                            <NavLink
+                                                key={index}
+                                                to={item.to}
+                                                className={({ isActive }) => cx('menu-item', { active: isActive })}
+                                                onClick={() => setActiveIndex(index)}
+                                            >
+                                                {item.title}
+                                            </NavLink>
 
-                                    <li>
-                                        <Link to="/property" className={cx('menu-item')}>
-                                            <span>Property</span>
-                                        </Link>
-                                    </li>
-
-                                    <li>
-                                        <Link to="/agencies" className={cx('menu-item')}>
-                                            Agencies
-                                            {/* <FontAwesomeIcon className={cx('icon-down')} icon={faAngleDown} /> */}
-                                        </Link>
-                                    </li>
-
-                                    <li>
-                                        <Link to="/agent" className={cx('menu-item')}>
-                                            Agents
-                                            {/* <FontAwesomeIcon className={cx('icon-down')} icon={faAngleDown} /> */}
-                                        </Link>
-                                    </li>
-
-                                    <li>
-                                        <Link to="/blog" className={cx('menu-item')}>
-                                            <span>Blog</span>
-                                        </Link>
-                                    </li>
-
-                                    <li>
-                                        <Link to="/contact" className={cx('menu-item')}>
-                                            <span>Contact</span>
-                                        </Link>
-                                    </li>
+                                            // react-router-dom cung cấp NavLink, tự động áp dụng một class active khi đường dẫn trùng khớp với to.
+                                            // Điều này đơn giản hóa logic.
+                                            // Khi sử dụng NavLink:
+                                            // Dựa vào thuộc tính isActive tự động được cung cấp bởi react-router-dom.
+                                            // Nếu URL hiện tại trùng khớp với to, isActive sẽ là true và thêm lớp active.
+                                        );
+                                    })}
                                 </ul>
                             </div>
 
@@ -184,25 +220,17 @@ function Header() {
                                             placement="bottom-end"
                                             render={(attrs) => (
                                                 <ul className={cx('box-menu__list')} tabIndex="-1" {...attrs}>
-                                                    <li>
-                                                        <Link to="/loanprocess">LoanProcess</Link>
-                                                    </li>
-
-                                                    <li>
-                                                        <Link to="/carrer">Carrer</Link>
-                                                    </li>
-
-                                                    <li>
-                                                        <Link to="/faq">Fqa</Link>
-                                                    </li>
-
-                                                    <li>
-                                                        <span>Englist</span>
-                                                    </li>
-
-                                                    <li>
-                                                        <span>Dark mode</span>
-                                                    </li>
+                                                    {moreMenuItems.map((item, index) => {
+                                                        return (
+                                                            <Link
+                                                                key={index}
+                                                                to={item.to}
+                                                                className={cx('box-menu__item-link')}
+                                                            >
+                                                                {item.title}
+                                                            </Link>
+                                                        );
+                                                    })}
                                                 </ul>
                                             )}
                                         >
