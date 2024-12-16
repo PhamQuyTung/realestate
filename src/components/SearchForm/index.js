@@ -84,7 +84,7 @@ function SearchForm() {
         <div className={cx('widget-price')}>
             <div className={cx('range-section')}>
                 <SliderRange title='Price' />
-                <SliderRange title='Size' />
+                <SliderRange title='Size' minValue='0' maxValue='5000' />
             </div>
 
             <div className={cx('filter-section')}>

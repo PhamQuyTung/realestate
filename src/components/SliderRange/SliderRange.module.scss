@@ -50,6 +50,7 @@ $circle-border-color: #fff;
     text-align: start;
     font-size: 1.4rem;
     color: #333;
+    user-select: none;
 
     span {
         color: $highlight-color;

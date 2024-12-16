@@ -665,7 +665,8 @@
     border-radius: 16px;
     position: fixed;
     top: 100%;
-    right: -456px;
+    right: -410px;
+    user-select: none;
     // animation: fadeIn 0.3s linear;
 
     @keyframes fadeIn {

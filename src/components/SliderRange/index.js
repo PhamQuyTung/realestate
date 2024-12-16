@@ -4,10 +4,10 @@ import classNames from 'classnames/bind';
 
 const cx = classNames.bind(styles);
 
-const SliderRange = ({ title }) => {
+const SliderRange = ({ title, minValue = 100, maxValue = 500000 }) => {
     const sliderRef = useRef(null);
-    const [range] = useState({ min: 100, max: 500000 }); // Giá trị min và max
-    const [values, setValues] = useState({ lower: 100, upper: 500000 });
+    const [range] = useState({ min: minValue, max: maxValue }); // Giá trị min và max
+    const [values, setValues] = useState({ lower: minValue, upper: maxValue });
 
     // Hàm tính toán giá trị dựa trên vị trí click hoặc kéo
     const calculateValue = (clientX) => {
