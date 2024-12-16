@@ -644,7 +644,7 @@
     cursor: pointer;
     transition: color 0.3s ease;
     // text-decoration: none;
-    // font-weight: 700; 
+    // font-weight: 700;
     /* text-transform: uppercase; */
     border-radius: 5px;
     padding: 30px 15px;
@@ -676,11 +676,43 @@
     cursor: pointer;
     transition: color 0.3s ease;
     // text-decoration: none;
-    // font-weight: 700; 
+    // font-weight: 700;
     /* text-transform: uppercase; */
     // border-radius: 5px;
     // padding: 30px 15px;
     // position: relative;
+}
+
+.current-user {
+    display: flex;
+    align-items: center;
+    // margin: 0 5px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    img {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+}
+
+.box-menu__item-link {
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    color: var(--black-color);
+    padding: 12px 24px;
+    // margin-left: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: var(--white-color);
+        background-color: var(--primary-color1);
+    }
 }
 
 .actions-item_phone {
@@ -724,7 +756,7 @@
     margin-left: 5px;
     background-color: transparent;
     transition: background-color 0.3s ease;
-    
+
     &:hover {
         color: var(--primary-color1);
     }
@@ -753,6 +785,7 @@
         font-size: 1.6rem;
         color: var(--black-color);
         padding: 12px 24px;
+        margin-left: 10px;
         cursor: pointer;
         transition: color 0.3s ease;
         border-radius: 10px;
@@ -762,4 +795,3 @@
         }
     }
 }
-

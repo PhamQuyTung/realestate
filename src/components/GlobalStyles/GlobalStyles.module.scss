@@ -51,6 +51,10 @@ button {
     background-color: transparent;
 }
 
+svg {
+    margin: 0 10px;
+}
+
 .container {
     max-width: var(--layout-maxHeight);
     margin: 0 auto;
