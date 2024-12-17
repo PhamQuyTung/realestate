@@ -1,0 +1,27 @@
+.tf-title {
+    --description-color: rgba(44, 46, 51, 0.6);
+
+    h1 {
+        font-size: 4rem;
+        font-weight: bold;
+        color: var(--primary-color2);
+    }
+    p {
+        font-size: 1.6rem;
+        color: var(--description-color);
+    }
+
+    &.align-left {
+        text-align: left;
+    }
+    &.align-center {
+        text-align: center;
+    }
+    &.align-right {
+        text-align: right;
+    }
+
+    &.paddingTop {
+        padding-top: 104px;
+    }
+}

@@ -1,4 +1,3 @@
-//
 .grid {
     width: 100%;
     display: block;
@@ -12,6 +11,7 @@
 
 .row {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     margin-left: -4px;
     margin-right: -4px;
@@ -591,8 +591,61 @@
     }
 }
 
-//
-.container {
-    margin-top: var(--header-height);
-    height: 2000px;
+// ----------------------------------------------------------------
+.tf-box {
+    margin-top: 50px;
+}
+
+.tf-link {
+    padding: 30px 24px 24px 24px;
+    background-color: var(--white-color);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 27px;
+    z-index: 1;
+    border: 1px solid #ececec;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    .icon-building {
+        width: 80px;
+        height: 80px;
+        display: inline-block;
+        vertical-align: middle;
+        transition: color 0.3s ease; // Thêm transition để mượt hơn
+    }
+
+    .tf-text {
+        text-align: center;
+
+        h5 {
+            font-size: 2rem;
+            color: var(--primary-color2);
+            transition: color 0.3s ease; // Thêm transition cho màu
+        }
+
+        p {
+            font-size: 1.6rem;
+            color: var(--primary-color2);
+            transition: color 0.3s ease; // Thêm transition cho màu
+        }
+    }
+
+    &:hover {
+        color: var(--white-color); // Màu sẽ áp dụng cho các phần tử con kế thừa
+        background-color: var(--primary-color1);
+        transform: translateY(-3px);
+
+        .icon-building {
+            color: var(--white-color); // Chuyển màu icon sang trắng
+        }
+
+        .tf-text h5,
+        .tf-text p {
+            color: var(--white-color); // Chuyển màu title và description sang trắng
+        }
+    }
 }
