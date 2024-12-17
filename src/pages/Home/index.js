@@ -1,6 +1,7 @@
 import styles from './Home.module.scss';
 import classNames from 'classnames/bind';
 import BigTitle from './BigTitle'
+import Content from './Content';
 
 const cx = classNames.bind(styles);
 
@@ -11,6 +12,8 @@ function Home() {
             <BigTitle />
 
             {/* main content home */}
+            <Content />
+            
             {/* footer home */}
         </div> 
     )

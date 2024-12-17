@@ -596,6 +596,64 @@
     --primary-text1: #5c5e61;
 }
 
+//----------------------------------------------------------------
+// .drop-sort {
+//     min-width: 200px;
+//     position: relative;
+//     color: var(--primary-text1);
+//     width: 290px;
+//     height: 54px;
+// }
+
+// .dropdown-header {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     height: 100%;
+//     padding: 10px;
+//     background-color: #fff;
+//     cursor: pointer;
+//     font-size: 16px;
+//     color: var(--primary-text1);
+//     border: 1px solid #cacaca;
+//     border-radius: 16px;
+// }
+
+// .dropdown-icon {
+//     font-size: 14px;
+//     transition: transform 0.3s ease;
+// }
+
+// .dropdown-list {
+//     position: absolute;
+//     top: 100%;
+//     left: 0;
+//     width: 100%;
+//     border-radius: 5px;
+//     background-color: #fff;
+//     margin-top: 5px;
+//     z-index: 100;
+//     list-style: none;
+//     padding: 0;
+// }
+
+// .dropdown-item {
+//     padding: 10px;
+//     cursor: pointer;
+//     transition: all 0.3s ease;
+
+//     &:hover {
+//         color: var(--primary-color1);
+//         border-radius: 5px;
+//     }
+// }
+
+// .dropdown-item-selected {
+//     color: var(--primary-color1);  // hightlight màu chữ khi đc chọn
+//     border-radius: 5px;
+// }
+
+// ----------------------------------------------------------------
 .widget-price {
     display: flex;
     flex-direction: column;
@@ -607,8 +665,9 @@
     border-radius: 16px;
     position: fixed;
     top: 100%;
-    right: -456px;
-    animation: fadeIn 0.3s linear;
+    right: -410px;
+    user-select: none;
+    // animation: fadeIn 0.3s linear;
 
     @keyframes fadeIn {
         0% {
@@ -621,7 +680,7 @@
 
     .range-section {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 30px;
         margin-bottom: 30px;
 

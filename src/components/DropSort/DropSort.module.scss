@@ -1,0 +1,75 @@
+//
+.wide {
+    min-width: 300px;
+    max-height: 155px;
+    border: 1px solid #ececec;
+    border-radius: 16px;
+    padding: 10px;
+}
+
+.narrow {
+    min-width: 200px;
+    height: 84px;
+    padding: 10px 15px 10px 10px;
+    border-right: 1px solid #ececec;
+}
+
+//
+.drop-sort {
+    // min-width: 200px;
+    position: relative;
+    color: var(--primary-color2);
+}
+
+.dropdown-header {
+    // width: 290px;
+    height: 54px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    color: var(--primary-text1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.dropdown-icon {
+    font-size: 1.4rem;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    // height: 155px;
+    border-radius: 5px;
+    border: 1px solid #ececec;
+    background-color: #fff;
+    margin-top: 5px;
+    z-index: 9;
+    list-style: none;
+    padding: 0;
+    overflow-y: auto;
+}
+
+.dropdown-item {
+    color: var(--primary-text1);
+    font-size: 1.4rem;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: var(--primary-color1);
+        border-radius: 5px;
+    }
+}
+
+.dropdown-item-selected {
+    color: var(--primary-color1); // hightlight màu chữ khi đc chọn
+    border-radius: 5px;
+}
