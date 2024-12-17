@@ -3,43 +3,82 @@ import styles from './Tf.module.scss';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBuilding } from '@fortawesome/free-solid-svg-icons';
+import { faBuilding, faCity, faHotel, faHouse, faShop, faTreeCity } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
+// const ListItemContentTF = [
+//     {
+//         icon: <FontAwesomeIcon icon={faHouse} className={cx('icon-building')} />,
+//         to: '/',
+//         title: 'Apartment',
+//         description: '234 Property',
+//     },
+//     {
+//         icon: <FontAwesomeIcon icon={faBuilding} className={cx('icon-building')} />,
+//         to: '/',
+//         title: 'Villa',
+//         description: '234 Property',
+//     },
+//     {
+//         icon: <FontAwesomeIcon icon={faCity} className={cx('icon-building')} />,
+//         to: '/',
+//         title: 'Studio',
+//         description: '234 Property',
+//     },
+//     {
+//         icon: <FontAwesomeIcon icon={faHotel} className={cx('icon-building')} />,
+//         to: '/',
+//         title: 'Office',
+//         description: '234 Property',
+//     },
+//     {
+//         icon: <FontAwesomeIcon icon={faTreeCity} className={cx('icon-building')} />,
+//         to: '/',
+//         title: 'Townhouse',
+//         description: '234 Property',
+//     },
+//     {
+//         icon: <FontAwesomeIcon icon={faShop} className={cx('icon-building')} />,
+//         to: '/',
+//         title: 'Commercial',
+//         description: '234 Property',
+//     },
+// ];
+
 const ListItemContentTF = [
     {
-        icon: <FontAwesomeIcon icon={faBuilding} className={cx('icon-building')} />,
+        iconClass: 'icon-apartment1',
         to: '/',
         title: 'Apartment',
         description: '234 Property',
     },
     {
-        icon: <FontAwesomeIcon icon={faBuilding} className={cx('icon-building')} />,
+        iconClass: 'icon-villa',
         to: '/',
         title: 'Villa',
         description: '234 Property',
     },
     {
-        icon: <FontAwesomeIcon icon={faBuilding} className={cx('icon-building')} />,
+        iconClass: 'icon-studio',
         to: '/',
         title: 'Studio',
         description: '234 Property',
     },
     {
-        icon: <FontAwesomeIcon icon={faBuilding} className={cx('icon-building')} />,
+        iconClass: 'icon-office1',
         to: '/',
         title: 'Office',
         description: '234 Property',
     },
     {
-        icon: <FontAwesomeIcon icon={faBuilding} className={cx('icon-building')} />,
+        iconClass: 'icon-townhouse',
         to: '/',
         title: 'Townhouse',
         description: '234 Property',
     },
     {
-        icon: <FontAwesomeIcon icon={faBuilding} className={cx('icon-building')} />,
+        iconClass: 'icon-commercial',
         to: '/',
         title: 'Commercial',
         description: '234 Property',
@@ -62,7 +101,8 @@ function Tf() {
                         return (
                             <div className={cx('col', 'l-2', 'm-4', 'c-12')}>
                                 <Link to={list.to} key={index} className={cx('tf-link')}>
-                                    {list.icon}
+                                    <i className={cx('icon', list.iconClass)}></i>
+
                                     <div className={cx('tf-text')}>
                                         <h5>{list.title}</h5>
                                         <p>{list.description}</p>
