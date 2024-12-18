@@ -2,11 +2,8 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './ListingProperty.module.scss';
 import Title from '~/components/Title';
-import BoxHouse from '~/components/BoxHouse';
 import { Grid, Row, Col } from '~/components/Grid/Grid.js';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
-import { faArrowRightArrowLeft, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import BoxHouse from '~/components/BoxHouse';
 
 const cx = classNames.bind(styles);
 
