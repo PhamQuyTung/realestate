@@ -1,8 +1,16 @@
-import Tf from './Tf';
+import { Tf, ListingProperty } from './exp';
 
 function Content() {
     return (
-        <Tf />
+        <>
+            <div className="tf-content">
+                <Tf />
+            </div>
+
+            <div className="listing-content">
+                <ListingProperty />
+            </div>
+        </>
     );
 }
 
