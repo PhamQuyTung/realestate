@@ -1,8 +1,37 @@
 .discover-container {
     width: 100%;
-    min-height: 900px;
+    // min-height: 900px;
     background-color: #fef7f1;
     // padding-top: 104px;
     padding-bottom: 104px;
     margin-top: 104px;
+}
+
+.list-btn {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 48px;
+    margin-top: 48px;
+}
+
+.btn-text {
+    font-weight: 700;
+}
+
+.discover-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+}
+
+.discover-footer p {
+    color: rgba(44, 46, 51, 0.6);
+}
+
+.btn-footer-link {
+    margin-left: 5px;
+    text-decoration: underline;
+    font-weight: 700;
+    color: var(--primary-color1);
 }

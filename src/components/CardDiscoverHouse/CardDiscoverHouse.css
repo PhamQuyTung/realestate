@@ -1,0 +1,66 @@
+.card-discover {
+    width: 100%;
+    padding: 24px 30px;
+    background: var(--white-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.2;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.card-discover:hover {
+    box-shadow: 0px 30px 60px rgba(241, 145, 61, 0.15);
+}
+
+.card-discover:hover .card-discover__title {
+    color: var(--primary-color1);
+}
+
+.card-discover:hover .card-discover__btn {
+    background-color: var(--primary-color1);
+}
+
+.card-discover:hover .card-discover__btn button a {
+    color: var(--white-color);
+}
+
+.card-discover:hover .card-discover-icon {
+    transform: rotateY(360deg); /* Lật 180 độ */
+}
+
+.card-discover-icon {
+    margin-bottom: 32px;
+    transition: transform 0.6s ease-in-out; /* Animation duration & easing */
+}
+
+.card-discover__text {
+    text-align: center;
+}
+
+.card-discover__title {
+    font-size: 2.4rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+    padding: 0 10px;
+    color: var(--primary-color2);
+    transition: all 0.3s ease;
+}
+
+.card-discover__description {
+    font-size: 1.6rem;
+    color: var(--primary-text1);
+    margin-bottom: 24px;
+    line-height: 22.4px;
+}
+
+.card-discover__btn {
+    border-radius: 14px;
+    transition: all 0.3s ease;
+}
+
+.card-discover__btn button a {
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
