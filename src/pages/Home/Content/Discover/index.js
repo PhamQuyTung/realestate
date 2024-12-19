@@ -10,29 +10,6 @@ import CardDiscoverHouse from '~/components/CardDiscoverHouse';
 
 const cx = classNames.bind(styles);
 
-// const ListItemsCard = [
-//     {
-//         icon: <SearchHomeIcon />,
-//         title: 'Find out how much you can afford',
-//         description: 'We’ll help you estimate your budget range. Save to your buyer profile to help in your search',
-//         link: '/',
-//     },
-//     {
-//         icon: <CoinHomeIcon />,
-//         title: 'Understand your monthly costs',
-//         description:
-//             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sollicitudin ipsum eumassa sollicitudin facilisis. ',
-//         link: '/',
-//     },
-//     {
-//         icon: <UpHomeIcon />,
-//         title: 'Get help with your down payment',
-//         description:
-//             'In fermentum dignissim mauris et blandit. Fusce efficitur libero sit amet ullamcorper, nec volutpat justo fringilla',
-//         link: '/',
-//     },
-// ];
-
 function Discover() {
     //
     const [btnActive, setBtnActive] = useState('Buying');

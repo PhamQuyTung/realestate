@@ -1,4 +1,4 @@
-import { Tf, ListingProperty, Discover } from './exp';
+import { Tf, ListingProperty, Discover, FormLoan } from './exp';
 import styles from './Content.module.scss';
 import classNames from 'classnames/bind';
 
@@ -17,6 +17,10 @@ function Content() {
 
             <div className="discover-content">
                 <Discover />
+            </div>
+
+            <div className="FormLoan-content">
+                <FormLoan />
             </div>
         </>
     );

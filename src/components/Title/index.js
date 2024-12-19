@@ -5,11 +5,7 @@ const cx = classNames.bind(styles);
 
 function TitleContent({ title, description, align = 'center', paddingTop = 104, className }) {
     return (
-        <div className={cx('tf-title', {
-            [`align-${align}`]: align,
-            paddingTop: paddingTop,
-            className,
-        })}>
+        <div className={cx('tf-title', `align-${align}`, { paddingTop }, className)}>
             <h1>{title}</h1>
             <p>{description}</p>
         </div>

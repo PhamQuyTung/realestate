@@ -667,7 +667,8 @@
     top: 100%;
     right: -410px;
     user-select: none;
-    // animation: fadeIn 0.3s linear;
+    animation: fadeIn 0.3s linear;
+    box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.08);
 
     @keyframes fadeIn {
         0% {
