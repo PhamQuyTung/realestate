@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useState } from 'react';
 import classNames from 'classnames/bind';
 import styles from './Discover.module.scss';
 import Title from '~/components/Title';
@@ -34,6 +34,14 @@ const cx = classNames.bind(styles);
 // ];
 
 function Discover() {
+    //
+    const [btnActive, setBtnActive] = useState('Buying');
+
+    //
+    function handleBtnActive(buttonName) {
+        setBtnActive(buttonName);
+    }
+
     return (
         <div className={cx('discover-container')}>
             {/* content */}
@@ -47,18 +55,30 @@ function Discover() {
                         />
 
                         <ul className={cx('list-btn')}>
-                            <li>
-                                <Button size="small" variant="outline">
+                            <li key="buying" className={cx('item-btn')}>
+                                <Button
+                                    size="small"
+                                    variant={btnActive === 'Buying' ? 'primary' : 'outline'}
+                                    onClick={() => handleBtnActive('Buying')} // Callback đúng
+                                >
                                     <span className={cx('btn-text')}>Buying</span>
                                 </Button>
                             </li>
-                            <li>
-                                <Button size="small" variant="outline">
+                            <li key="rating" className={cx('item-btn')}>
+                                <Button
+                                    size="small"
+                                    variant={btnActive === 'Rating' ? 'primary' : 'outline'}
+                                    onClick={() => handleBtnActive('Rating')} // Callback đúng
+                                >
                                     <span className={cx('btn-text')}>Rating</span>
                                 </Button>
                             </li>
-                            <li>
-                                <Button size="small" variant="outline">
+                            <li key="selling" className={cx('item-btn')}>
+                                <Button
+                                    size="small"
+                                    variant={btnActive === 'Selling' ? 'primary' : 'outline'}
+                                    onClick={() => handleBtnActive('Selling')} // Callback đúng
+                                >
                                     <span className={cx('btn-text')}>Selling</span>
                                 </Button>
                             </li>
@@ -66,28 +86,28 @@ function Discover() {
 
                         <Grid wide>
                             <Row>
-                                <Col sizeL={4} sizeM={12} sizeS={12}>
+                                <Col key="card1" sizeL={4} sizeM={12} sizeS={12}>
                                     <CardDiscoverHouse
                                         icon={<SearchHomeIcon />}
                                         title="Find out how much you can afford"
                                         description="We’ll help you estimate your budget range. Save to your buyer profile to help in your search"
-                                        to='/'
+                                        to="/"
                                     />
                                 </Col>
-                                <Col sizeL={4} sizeM={12} sizeS={12}>
+                                <Col key="card2" sizeL={4} sizeM={12} sizeS={12}>
                                     <CardDiscoverHouse
                                         icon={<CoinHomeIcon />}
                                         title="Understand your monthly costs"
                                         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sollicitudin ipsum eumassa sollicitudin facilisis."
-                                        to='/'
+                                        to="/"
                                     />
                                 </Col>
-                                <Col sizeL={4} sizeM={12} sizeS={12}>
+                                <Col key="card3" sizeL={4} sizeM={12} sizeS={12}>
                                     <CardDiscoverHouse
                                         icon={<UpHomeIcon />}
                                         title="Find out how much you can afford"
                                         description="In fermentum dignissim mauris et blandit. Fusce efficitur libero sit amet ullamcorper, nec volutpat justo fringilla"
-                                        to='/'
+                                        to="/"
                                     />
                                 </Col>
                             </Row>

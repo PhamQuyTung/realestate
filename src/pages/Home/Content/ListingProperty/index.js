@@ -19,7 +19,7 @@ function ListingProperty() {
             {/* content */}
             <Grid wide>
                 <Row>
-                    <Col sizeL={4} sizeM={6} sizeC={12}>
+                    <Col key="box1" sizeL={4} sizeM={6} sizeC={12}>
                         <BoxHouse
                             tags={['Featured', 'For Sale']}
                             image="https://themesflat.co/html/proty/images/section/box-house.jpg"
@@ -31,7 +31,7 @@ function ListingProperty() {
                             price="8,600"
                         />
                     </Col>
-                    <Col sizeL={4} sizeM={6} sizeC={12}>
+                    <Col key="box2" sizeL={4} sizeM={6} sizeC={12}>
                         <BoxHouse
                             tags={['Featured', 'For Sale']}
                             image="https://themesflat.co/html/proty/images/section/box-house.jpg"
@@ -43,7 +43,7 @@ function ListingProperty() {
                             price="8,600"
                         />
                     </Col>
-                    <Col sizeL={4} sizeM={6} sizeC={12}>
+                    <Col key="box3" sizeL={4} sizeM={6} sizeC={12}>
                         <BoxHouse
                             tags={['Featured', 'For Sale']}
                             image="https://themesflat.co/html/proty/images/section/box-house.jpg"
@@ -55,7 +55,7 @@ function ListingProperty() {
                             price="8,600"
                         />
                     </Col>
-                    <Col sizeL={4} sizeM={6} sizeC={12}>
+                    <Col key="box4" sizeL={4} sizeM={6} sizeC={12}>
                         <BoxHouse
                             tags={['Featured', 'For Sale']}
                             image="https://themesflat.co/html/proty/images/section/box-house.jpg"
@@ -67,7 +67,7 @@ function ListingProperty() {
                             price="8,600"
                         />
                     </Col>
-                    <Col sizeL={4} sizeM={6} sizeC={12}>
+                    <Col key="box5" sizeL={4} sizeM={6} sizeC={12}>
                         <BoxHouse
                             tags={['Featured', 'For Sale']}
                             image="https://themesflat.co/html/proty/images/section/box-house.jpg"
@@ -79,7 +79,7 @@ function ListingProperty() {
                             price="8,600"
                         />
                     </Col>
-                    <Col sizeL={4} sizeM={6} sizeC={12}>
+                    <Col key="box6" sizeL={4} sizeM={6} sizeC={12}>
                         <BoxHouse
                             tags={['Featured', 'For Sale']}
                             image="https://themesflat.co/html/proty/images/section/box-house.jpg"

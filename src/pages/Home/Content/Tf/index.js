@@ -7,77 +7,44 @@ import { faBuilding, faCity, faHotel, faHouse, faShop, faTreeCity } from '@forta
 
 const cx = classNames.bind(styles);
 
-// const ListItemContentTF = [
-//     {
-//         icon: <FontAwesomeIcon icon={faHouse} className={cx('icon-building')} />,
-//         to: '/',
-//         title: 'Apartment',
-//         description: '234 Property',
-//     },
-//     {
-//         icon: <FontAwesomeIcon icon={faBuilding} className={cx('icon-building')} />,
-//         to: '/',
-//         title: 'Villa',
-//         description: '234 Property',
-//     },
-//     {
-//         icon: <FontAwesomeIcon icon={faCity} className={cx('icon-building')} />,
-//         to: '/',
-//         title: 'Studio',
-//         description: '234 Property',
-//     },
-//     {
-//         icon: <FontAwesomeIcon icon={faHotel} className={cx('icon-building')} />,
-//         to: '/',
-//         title: 'Office',
-//         description: '234 Property',
-//     },
-//     {
-//         icon: <FontAwesomeIcon icon={faTreeCity} className={cx('icon-building')} />,
-//         to: '/',
-//         title: 'Townhouse',
-//         description: '234 Property',
-//     },
-//     {
-//         icon: <FontAwesomeIcon icon={faShop} className={cx('icon-building')} />,
-//         to: '/',
-//         title: 'Commercial',
-//         description: '234 Property',
-//     },
-// ];
-
 const ListItemContentTF = [
     {
+        id: 1,
         iconClass: 'icon-apartment1',
         to: '/',
         title: 'Apartment',
         description: '234 Property',
     },
     {
+        id: 2,
         iconClass: 'icon-villa',
         to: '/',
         title: 'Villa',
         description: '234 Property',
     },
     {
+        id: 3,
         iconClass: 'icon-studio',
         to: '/',
         title: 'Studio',
         description: '234 Property',
     },
     {
+        id: 4,
         iconClass: 'icon-office1',
         to: '/',
         title: 'Office',
         description: '234 Property',
     },
     {
+        id: 5,
         iconClass: 'icon-townhouse',
         to: '/',
         title: 'Townhouse',
         description: '234 Property',
     },
     {
+        id: 6,
         iconClass: 'icon-commercial',
         to: '/',
         title: 'Commercial',
@@ -97,10 +64,10 @@ function Tf() {
 
             <div className={cx('tf-wrapper', 'grid', 'wide')}>
                 <div className={cx('tf-box', 'row')}>
-                    {ListItemContentTF.map((list, index) => {
+                    {ListItemContentTF.map((list) => {
                         return (
-                            <div className={cx('col', 'l-2', 'm-4', 'c-12')}>
-                                <Link to={list.to} key={index} className={cx('tf-link')}>
+                            <div className={cx('col', 'l-2', 'm-4', 'c-12')} key={list.id}>
+                                <Link to={list.to} className={cx('tf-link')}>
                                     <i className={cx('icon', list.iconClass)}></i>
 
                                     <div className={cx('tf-text')}>

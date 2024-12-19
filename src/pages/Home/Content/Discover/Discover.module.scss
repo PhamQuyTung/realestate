@@ -1,3 +1,4 @@
+//
 .discover-container {
     width: 100%;
     // min-height: 900px;
@@ -13,6 +14,10 @@
     gap: 12px;
     margin-bottom: 48px;
     margin-top: 48px;
+}
+
+.item-btn {
+    transition: all 0.3s ease;
 }
 
 .btn-text {
