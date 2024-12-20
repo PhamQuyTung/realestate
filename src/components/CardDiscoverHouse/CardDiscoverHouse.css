@@ -8,6 +8,7 @@
     line-height: 1.2;
     border-radius: 16px;
     transition: all 0.3s ease;
+    animation: fadeIn 0.3s ease;
 }
 
 .card-discover:hover {
@@ -63,4 +64,16 @@
 .card-discover__btn button a {
     font-weight: 500;
     transition: all 0.3s ease;
+}
+
+/*  */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

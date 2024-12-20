@@ -1,7 +1,6 @@
 .loan-container {
     padding-top: 104px;
     padding-bottom: 104px;
-    
 }
 
 .loan-wrap {
@@ -20,4 +19,139 @@
 
 .custom-class {
     padding: 0 12px;
+    line-height: 50px;
+
+    p {
+        margin-top: 15px;
+        line-height: 1.4;
+    }
+}
+
+.loan-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 12px;
+    margin-top: 48px;
+}
+
+.form1 {
+}
+
+.form-total {
+    display: flex;
+    // justify-content: space-between;
+    flex-direction: column;
+    min-width: 300px;
+}
+
+.form-total label,
+.form-input label,
+.form-payment-percent h1 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22.4px;
+    margin-bottom: 12px;
+}
+
+.form-payment-percent {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.form-wrap {
+    display: flex;
+    align-items: end;
+    gap: 20px;
+}
+
+.form-total input {
+    outline: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    width: 100%;
+    font-size: 16px;
+    padding: 13px 15px;
+    font-weight: 400;
+    line-height: 22.4px;
+    background-color: var(--white-color);
+    border: 1px solid #ececec;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 54px;
+    margin-bottom: 0;
+    
+}
+
+.form-total input::placeholder {
+    color: #000;
+}
+
+.form-input {
+    display: flex;
+    align-items: end;
+    gap: 10px;
+}
+
+.form-payment-dollar {
+    display: flex;
+    flex-direction: column;   
+}
+
+.form-payment-dollar input::placeholder {
+    color: #000;
+}
+
+.form-payment-dollar input {
+    outline: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    width: 100%;
+    padding: 13px 15px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22.4px;
+    background-color: var(--white-color);
+    border: 1px solid #ececec;
+    border-radius: 16px;
+    color: var(--primary-color2);
+    overflow: hidden;
+    height: 54px;
+    margin-bottom: 0;
+}
+
+.text {
+    margin-bottom: 33px;
+
+    p {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 22.4px;
+        color: rgba(44, 46, 51, 0.6);
+    }
+
+    span {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 22.4px;
+        color: var(--primary-color1);
+        margin-left: 5px;
+    }
+}
+
+.wrap-btn {
+    display: flex;
+    gap: 20px;
+    justify-content: start;
+}
+
+.custom-btn {
+    &:hover {
+        background-color: var(--primary-color2) !important;
+        color: var(--white-color) !important;
+        border: 1px solid var(--primary-color2) !important;
+    }
 }

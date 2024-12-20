@@ -24,13 +24,26 @@ const DropSort = ({ options, onOptionSelect, initialValue, isWide }) => {
 
     return (
         <div className={cx('drop-sort')}>
-            <div className={cx('dropdown-header', { wide: isWide, narrow: !isWide })} onClick={toggleDropdown}>
+            <div
+                className={cx('dropdown-header', {
+                    wide: isWide === true, // Chỉ thêm wide khi isWide = true
+                    narrow: isWide === false, // Chỉ thêm narrow khi isWide = false
+                    superSmall: isWide === undefined || isWide === null, // Chỉ thêm superSmall khi isWide không được truyền
+                })}
+                onClick={toggleDropdown}
+            >
                 <span>{selectedOption}</span>
                 <FontAwesomeIcon icon={isOpen ? faAngleUp : faAngleDown} className={cx('dropdown-icon')} />
             </div>
 
             {isOpen && (
-                <ul className={cx('dropdown-list', { wide: isWide, narrow: !isWide })}>
+                <ul
+                    className={cx('dropdown-list', {
+                        wide: isWide === true, // Chỉ thêm wide khi isWide = true
+                        narrow: isWide === false, // Chỉ thêm narrow khi isWide = false
+                        superSmall: isWide === undefined || isWide === null, // Chỉ thêm superSmall khi isWide không được truyền
+                    })}
+                >
                     {options.map((option) => (
                         <li
                             key={option}

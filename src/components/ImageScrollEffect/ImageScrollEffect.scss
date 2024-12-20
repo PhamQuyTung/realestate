@@ -1,0 +1,17 @@
+.image-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.scroll-animation {
+    display: block;
+    width: 100%;
+    transform: translateY(20px); /* Trượt nhẹ từ dưới lên */
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0; /* Ẩn ảnh ban đầu */
+}
+
+.scroll-animation.visible {
+    transform: translateY(0); /* Ảnh hiện lên */
+    opacity: 1;
+}

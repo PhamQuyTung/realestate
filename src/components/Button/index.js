@@ -11,6 +11,7 @@ const Button = ({
     size = 'medium', // small, medium, large
     variant = 'primary', // primary, secondary, outline, text
     onClick,
+    className,
     disabled = false,
     ...props
 }) => {
@@ -18,7 +19,7 @@ const Button = ({
         [size]: size,
         [variant]: variant,
         disabled: disabled,
-    });
+    }, className);
 
     return (
         <button className={classes} onClick={onClick} disabled={disabled} {...props}>
