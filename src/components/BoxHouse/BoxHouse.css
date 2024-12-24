@@ -195,6 +195,7 @@ span.tag.for.sale {
     padding-bottom: 16px;
     margin-bottom: 15px;
     gap: 9px;
+    font-size: 1.6rem;
 
     strong {
         font-weight: 400;

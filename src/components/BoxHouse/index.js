@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css'; // optional
 
-const BoxHouse = ({ tags = ['Featured', 'For Sale'], image, title, location, beds, baths, area, price }) => {
+const BoxHouse = ({ tags = ['Featured', 'For Sale'], image, title, location, beds, baths, area, garage, price }) => {
     return (
         <div className="box-house">
             <div className="box-image-wrap">
@@ -57,6 +57,9 @@ const BoxHouse = ({ tags = ['Featured', 'For Sale'], image, title, location, bed
                     </span>
                     <span>
                         <strong>{area}</strong> Sqft
+                    </span>
+                    <span>
+                        <strong>{garage}</strong> Garage
                     </span>
                 </div>
 
