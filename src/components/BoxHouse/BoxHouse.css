@@ -41,6 +41,10 @@
     content: '\e90f';
 }
 
+.icon-clock path {
+    fill: #5c5e61;
+}
+
 /* ------------------------------------------------------------------ */
 .box-house {
     border: 1px solid #ddd;
@@ -159,14 +163,14 @@
     border-radius: 999px;
 }
 
-span.tag.featured {
+span.tag:nth-child(1) {
     display: flex;
     align-items: center;
     padding: 0 12px;
     background-color: #f1913d;
 }
 
-span.tag.for.sale {
+span.tag:nth-child(2) {
     display: flex;
     align-items: center;
     padding: 0 12px;

@@ -1,0 +1,87 @@
+.testimonialWrap {
+    margin-top: 48px;
+    padding: 20px 20px 60px 20px;
+}
+
+.testimonials {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f9f9f9;
+
+    .card {
+        background: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+
+        .image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        .feedback {
+            font-size: 1.6rem;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .name {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #222;
+        }
+
+        .title {
+            font-size: 1.2rem;
+            color: #777;
+        }
+    }
+
+    /* Swiper pagination dots */
+    .swiper-pagination-bullet {
+        background: #333;
+        opacity: 0.8;
+    }
+    .swiper-pagination-bullet-active {
+        background: #007bff;
+    }
+}
+
+.rating {
+    margin-top: 0.5rem;
+
+    span {
+        font-size: 1.5rem;
+        margin: 0 0.1rem;
+    }
+}
+
+
+/*
+    :global phá vỡ phạm vi của CSS Module trong Testimonials.module.scss, 
+    cho phép các style được áp dụng một cách toàn cục, thay vì chỉ giới hạn trong phạm vi của module đó.
+*/
+:global {
+    .swiper-button-next,
+    .swiper-button-prev {
+        background: #f1913d !important;
+    }
+
+    .swiper-pagination-bullet {
+        background: #f1913d !important;
+    }
+
+    .swiper-pagination-bullet-active {
+        background: #f1913d !important;
+    }
+}
+
+

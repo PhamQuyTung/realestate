@@ -1,4 +1,4 @@
-import { Tf, ListingProperty, Discover, FormLoan, Neighborhoods, Open, Brand } from './exp';
+import { Tf, ListingProperty, Discover, FormLoan, Neighborhoods, Open, Brand, Appraisal, Insight, Testimonials } from './exp';
 import styles from './Content.module.scss';
 import classNames from 'classnames/bind';
 
@@ -33,6 +33,18 @@ function Content() {
 
             <div className="Brand-content">
                 <Brand />
+            </div>
+
+            <div className="Appraisal-content">
+                <Appraisal />
+            </div>
+
+            <div className="Insight-content">
+                <Insight />
+            </div>
+
+            <div className="Testimonials-content">
+                <Testimonials />
             </div>
         </>
     );
