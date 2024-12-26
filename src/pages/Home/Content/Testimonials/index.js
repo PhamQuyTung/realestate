@@ -1,13 +1,16 @@
 import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay } from 'swiper/modules'; // Đúng module import
-import ReactStars from 'react-rating-stars-component';
 
+// Import rating component
+import ReactStars from 'react-rating-stars-component';  // Dùng rating component
+
+// import Swiper to work with SwiperSlide
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay } from 'swiper/modules'; // Đúng module import
 
+//
 import Title from '~/components/Title';
-import { Grid, Row, Col } from '~/components/Grid/Grid.js';
 import styles from './Testimonials.module.scss';
 
 const testimonialsData = [
@@ -37,6 +40,33 @@ const testimonialsData = [
         feedback:
             'My experience with property management services has exceeded expectations. They efficiently manage properties with a professional and attentive approach in every situation. I feel reassured that any issue will be resolved promptly and effectively.',
         rating: 3, // Thêm rating
+    },
+    {
+        id: 4,
+        name: 'Eleanor Pena',
+        title: 'CEO Themesflat',
+        image: 'https://themesflat.co/html/proty/images/avatar/avt-png7.png',
+        feedback:
+            'In hac habitasse platea dictumst. Sed eleifend aliquam dui quis convallis. Sed aliquet eros sit amet metus rhoncus bibendum nec vel nunc. Nullam ac dapibus enim. Nulla rhoncus ante ante, nec lacinia turpis consectetur non. Vivamus sit amet nunc leo.',
+        rating: 5, // Thêm rating
+    },
+    {
+        id: 5,
+        name: 'Cody Fisher',
+        title: 'CEO Themesflat',
+        image: 'https://themesflat.co/html/proty/images/avatar/avt-png6.png',
+        feedback:
+            'Vivamus at nisl ornare, vulputate turpis finibus, posuere metus. Donec in placerat felis. Praesent ante tellus, dignissim nec imperdiet ac.',
+        rating: 5, // Thêm rating
+    },
+    {
+        id: 6,
+        name: 'Ralph Edwards',
+        title: 'CEO Themesflat',
+        image: 'https://themesflat.co/html/proty/images/avatar/avt-png5.png',
+        feedback:
+            'Quisque tincidunt, nunc vitae maximus lobortis, tellus risus fringilla mi, pulvinar feugiat lacus ipsum nec tortor. Aliquam a venenatis orci, id bibendum eros. Pellentesque in ante rutrum, congue eros vestibulum, commodo ex.',
+        rating: 4, // Thêm rating
     },
 ];
 

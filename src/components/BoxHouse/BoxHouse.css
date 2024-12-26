@@ -19,7 +19,6 @@
     /* Đảm bảo các biểu tượng hiển thị đúng */
     font-variant: normal;
     text-rendering: auto;
-    color: #f1913d;
 }
 
 .location {
@@ -31,14 +30,17 @@
 
 .icon-zoomIn:before {
     content: '\e90b';
+    color: #f1913d;
 }
 
 .icon-save::before {
     content: '\e913';
+    color: #f1913d;
 }
 
 .icon-location:before {
     content: '\e90f';
+    color: #f1913d;
 }
 
 .icon-clock path {

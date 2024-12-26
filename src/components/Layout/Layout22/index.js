@@ -1,4 +1,5 @@
 import Header from '~/components/Header';
+import Footer from '../../Footer';
 import Sidebar from '~/components/Sidebar';
 // import SearchTop from '~/components/SearchTop';
 import FlatTitle from '~/components/FlatTitle';
@@ -26,6 +27,7 @@ function Layout22({ children }) {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }
