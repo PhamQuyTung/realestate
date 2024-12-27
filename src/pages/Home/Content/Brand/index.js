@@ -4,8 +4,21 @@ import styles from './Brand.module.scss';
 import Title from '~/components/Title';
 import { Brand1Icon, Brand2Icon, Brand3Icon, Brand4Icon, Brand5Icon, Brand6Icon } from '~/components/Icon';
 import { Grid, Row, Col } from '~/components/Grid/Grid.js';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay } from 'swiper/modules';
 
 const cx = classNames.bind(styles);
+
+const originalBrands = [Brand1Icon, Brand2Icon, Brand3Icon, Brand4Icon, Brand5Icon, Brand6Icon];
+const ListBrand = [...originalBrands, ...originalBrands];
+
+const BrandIcon = React.memo(({ Icon }) => (
+    <div className={cx('brand-logo')}>
+        <Icon className={cx('brand-icon')} />
+    </div>
+));
 
 function Brand() {
     return (
@@ -17,36 +30,23 @@ function Brand() {
             />
             <Grid wide>
                 <Row>
-                    <Col sizeL={2} sizeM={4} sizeC={6}>
-                        <div className={cx('brand-logo')}>
-                            <Brand1Icon className={cx('brand-icon')} />
-                        </div>
-                    </Col>
-                    <Col sizeL={2} sizeM={4} sizeC={6}>
-                        <div className={cx('brand-logo')}>
-                            <Brand2Icon className={cx('brand-icon')} />
-                        </div>
-                    </Col>
-                    <Col sizeL={2} sizeM={4} sizeC={6}>
-                        <div className={cx('brand-logo')}>
-                            <Brand3Icon className={cx('brand-icon')} />
-                        </div>
-                    </Col>
-                    <Col sizeL={2} sizeM={4} sizeC={6}>
-                        <div className={cx('brand-logo')}>
-                            <Brand4Icon className={cx('brand-icon')} />
-                        </div>
-                    </Col>
-                    <Col sizeL={2} sizeM={4} sizeC={6}>
-                        <div className={cx('brand-logo')}>
-                            <Brand5Icon className={cx('brand-icon')} />
-                        </div>
-                    </Col>
-                    <Col sizeL={2} sizeM={4} sizeC={6}>
-                        <div className={cx('brand-logo')}>
-                            <Brand6Icon className={cx('brand-icon')} />
-                        </div>
-                    </Col>
+                    <Swiper
+                        modules={[Autoplay]}
+                        spaceBetween={30}
+                        slidesPerView={6}
+                        loop={true}
+                        autoplay={{
+                            delay: 3000,
+                            disableOnInteraction: false,
+                        }}
+                        speed={1000}
+                    >
+                        {ListBrand.map((Icon, index) => (
+                            <SwiperSlide key={`${Icon.name}-${index}`}>
+                                <BrandIcon Icon={Icon} />
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
                 </Row>
             </Grid>
         </div>

@@ -21,7 +21,7 @@ function Neighborhoods() {
                             description="Find your dream apartment with our listing"
                             className={cx('custom-title-nbh')}
                         />
-
+                        
                         <div className={cx('nbh-wrapper')}>
                             <div className={cx('nbh-list')}>
                                 <div className={cx('nbh-item', 'item-1')}>

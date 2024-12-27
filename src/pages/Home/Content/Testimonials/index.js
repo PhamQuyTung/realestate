@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Import rating component
-import ReactStars from 'react-rating-stars-component';  // Dùng rating component
+import ReactStars from 'react-rating-stars-component'; // Dùng rating component
 
 // import Swiper to work with SwiperSlide
 import 'swiper/css';
@@ -83,6 +83,10 @@ const Testimonials = () => {
                 description="Thousands of luxury home enthusiasts just like you visit our website."
                 // className='custom-title'
             />
+
+            {/* 
+                <Swiper>: Thành phần chính của Swiper.js, nơi chứa các cài đặt và cấu hình cho slider.
+            */}
             <div className={styles.testimonialWrap}>
                 <Swiper
                     modules={[Pagination, Autoplay]} // Đăng ký module
@@ -91,9 +95,37 @@ const Testimonials = () => {
                     loop={true}
                     autoplay={{ delay: 3000 }}
                     pagination={{ clickable: true }}
-                    // className="myCustomSwiper"
+
+                    /*
+                        2. Cấu hình trong Swiper
+                        + modules={[Pagination, Autoplay]}: Đăng ký các module bổ sung (tính năng) của Swiper:
+                            Pagination: Hiển thị các chấm hoặc nút chỉ số ở dưới slider để người dùng biết họ đang ở slide nào.
+                            Autoplay: Tự động chuyển slide sau một khoảng thời gian.
+
+                        + spaceBetween={30}: Khoảng cách giữa các slide là 30px.
+
+                        + slidesPerView={1}: Hiển thị 1 slide trên màn hình.
+
+                        + loop={true}: Kích hoạt chế độ lặp vô hạn (quay lại slide đầu sau khi đến slide cuối).
+
+                        + autoplay={{ delay: 3000 }}: Cấu hình tính năng tự động chuyển slide, với mỗi lần chuyển cách nhau 3 giây (3000ms).
+
+                        + pagination={{ clickable: true }}: Cấu hình pagination, cho phép người dùng nhấp vào các chấm để chuyển slide.
+                    */
                 >
+
+                    {/* 
+                        3. Dữ liệu động với testimonialsData
+                            Dữ liệu được lặp qua bằng .map() để tạo các slide động.
+                            Mỗi slide chứa các thông tin:
+                                Hình ảnh (testimonial.image): Hiển thị ảnh đại diện.
+                                Phản hồi (testimonial.feedback): Nội dung feedback.
+                                Tên (testimonial.name): Tên người phản hồi.
+                                Chức danh (testimonial.title): Vị trí hoặc thông tin liên quan của người phản hồi.
+                                Sao đánh giá (testimonial.rating): Hiển thị xếp hạng với thư viện ReactStars.
+                    */}
                     {testimonialsData.map((testimonial) => (
+                        // <SwiperSlide>: Thành phần con dùng để chứa nội dung từng slide.
                         <SwiperSlide key={testimonial.id}>
                             <div className={styles.card}>
                                 <img src={testimonial.image} alt={testimonial.name} className={styles.image} />
@@ -107,6 +139,16 @@ const Testimonials = () => {
                                     activeColor="#f1913d"
                                     edit={false} // Không cho chỉnh sửa
                                 />
+
+                                {/* 
+                                    4. Tính năng bổ sung
+                                        truncateText(testimonial.feedback, 200): Rút gọn nội dung feedback nếu vượt quá 200 ký tự.
+                                        
+                                        ReactStars: Thư viện để hiển thị xếp hạng bằng sao, với:
+                                            count: Số sao tối đa.
+                                            value: Giá trị đánh giá từ dữ liệu.
+                                            edit={false}: Không cho phép chỉnh sửa giá trị sao.
+                                */}
                             </div>
                         </SwiperSlide>
                     ))}
