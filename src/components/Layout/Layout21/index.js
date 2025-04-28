@@ -1,5 +1,6 @@
 import Header from '~/components/Header';
 import Sidebar from '~/components/Sidebar';
+import Footer from '../../Footer';
 import FlatTitle from '~/components/FlatTitle';
 import styles from './Layout21.module.scss';
 import classNames from 'classnames/bind';
@@ -26,6 +27,7 @@ function Layout21({ children }) {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }

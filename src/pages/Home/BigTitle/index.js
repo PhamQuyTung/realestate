@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Tippy from '@tippyjs/react/headless'; // different import path!
 
 // import các ảnh icon từ fontawesome
-import { faAngleUp, faAngleDown, faSliders, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faSliders, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // import các css cho trang BigTitle
@@ -12,26 +12,16 @@ import classNames from 'classnames/bind';
 
 // import component search
 import SearchForm from '~/components/SearchForm';
+import DropSort from '~/components/DropSort';
 
 const cx = classNames.bind(styles);
 
 function BigTitle() {
     const arrSelectOption = ['For rent', 'For sale'];
 
-    //Logic xử lý dropdown
-    const [isOpen, setIsOpen] = useState(false); //set isOpen flag to true when opening the dialog box
-    const [selectedOption, setSelectedOption] = useState('Select Option'); //set selectedOption flag to true when selecting option from the dialog box
-
-    // Logic xử lý click vào dropdown
-    const toggleDropdown = () => {
-        setIsOpen(!isOpen);
-    };
-
-    // Logic xử lý click vào option dropdown
-    const handleOptionClick = (option) => {
-        setSelectedOption(option); // Cập nhật chữ hiển thị
-        setIsOpen(false); // Đóng dropdown sau khi chọn
-    };
+    function handSelectOptionTop(selected) {
+        console.log('Selected from Box Top:', selected);
+    }
 
     // render jsx
     return (
@@ -48,32 +38,12 @@ function BigTitle() {
                             <div className={cx('search-filter')}>
                                 {/* form-title */}
                                 <div className={cx('form-title')}>
-                                    <div className={cx('drop-sort')}>
-                                        <div className={cx('dropdown-header')} onClick={toggleDropdown}>
-                                            <span>{selectedOption}</span>
-                                            <FontAwesomeIcon
-                                                icon={isOpen ? faAngleUp : faAngleDown} // icon size change to fit
-                                                className={cx('dropdown-icon')}
-                                            />
-                                        </div>
-
-                                        {/* Logic dropdown  */}
-                                        {isOpen && (
-                                            <ul className={cx('dropdown-list')}>
-                                                {arrSelectOption.map((option) => (
-                                                    <li
-                                                        key={option}
-                                                        className={cx('dropdown-item', {
-                                                            'dropdown-item-selected': selectedOption === option, // Highlight khi được chọn
-                                                        })}
-                                                        onClick={() => handleOptionClick(option)}
-                                                    >
-                                                        {option}
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        )}
-                                    </div>
+                                    <DropSort
+                                        options={arrSelectOption}
+                                        initialValue="For rent" // Giá trị khởi tạo cho Box Top
+                                        onOptionSelect={handSelectOptionTop}
+                                        isWide={false}
+                                    />
 
                                     <form className={cx('form-field')}>
                                         <input type="text" placeholder="Place, neighborhood, school or agent..." />

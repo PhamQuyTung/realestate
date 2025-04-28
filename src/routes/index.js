@@ -33,7 +33,7 @@ const publicRoutes = [
         layout: DefaultLayout, // Layout có header và sidebar
     },
     {
-        path: '/agent',
+        path: '/agents',
         component: AgentContent,
         layout: DefaultLayout, // Layout chỉ có header
     },

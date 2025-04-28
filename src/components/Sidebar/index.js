@@ -26,7 +26,7 @@ function Sidebar() {
                 <ul className={cx('sidebar-list')}>
                     {sidebarItems.map(({id, Component, title}) => {
                         return (
-                            <li key={id} Component={Component} title={title}>
+                            <li key={id} className={cx('sidebar-item')} title={title}>
                                 <h2>{title}</h2>
                                 <Component />
                             </li>

@@ -2,10 +2,12 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { publicRoutes } from '~/routes';
 import { DefaultLayout } from '~/components/Layout';
+import ScrollToTop from 'react-scroll-to-top';
 
 function App() {
     return (
         <Router>
+            <ScrollToTop smooth style={{ backgroundColor: '#f1913d', color: '#fff', borderRadius: 999 }} />
             <div className="App">
                 <Routes>
                     {/* Lấy tất cả các public routes và render chúng theo thứ tự đã định sẵn */}
